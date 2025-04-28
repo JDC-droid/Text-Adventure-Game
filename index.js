@@ -87,7 +87,7 @@ class Room {
     return details;
   }
 
-  move(direction) {
+  move(direction, player) {
     if (direction in this._linkedRooms) {
       return this._linkedRooms[direction];
     } else {
@@ -260,7 +260,7 @@ bridge.description = "well at least we got to the bridge, next step the kingdom 
 
 const kingdomGate = new Room("The Gate", "./Kingdom.Gate.jpeg");
 kingdomGate.description = "Why is there an ogre infront of the Gate? asleep?... We dont have gear to fight this thing or do anything really. what do we do?";
-const ogre = new Item("Shargoth the Destroyer...how? this is absurd.");
+const ogre = new Item("Shargoth the Destroyer");
 kingdomGate.character = new Character("Shargoth the Destroyer");
 kingdomGate.character.description = "Shargoth the destroyer, the demon kings mightiest warrior, what are they doing here? of all things...";
 ogre.description = "DID YOU JUST PICK UP AND STORE AN OGRE? WHO ARE YOU? WHAT ARE YOU?....you know what? forget it.";
@@ -278,9 +278,18 @@ throneRoom.description = "There it is the Golden Throne...not to be mistaken wit
 
 const throne = new Room("Glad to of made it");
 throne.description = "well thats it my friend, me and you all the way to the end, been good hasn't it? well, guess I will leave you with your achievemnt's, put that crown on, rule this place, you dont need me anymore. so long pal.";
-const crown = new Item("Crown");
+const crown = new Item("crown");
 crown.description ="Well, Good Job friend, well done.";
 throne.addItem(crown);
+throne.character = new Character("King of Aurum Plateis");
+throne.character.description = "King of Aurum Plateis, the one and only, d@*&head, whoops sorry forgot this was PG rated. but no he Is a d#!£.";
+throne.character.conversation = "YOOOOOOOOOUUUUU! GET OFF MY THRONE! WHO EVEN ARE YOU?! YOU SAD EXCUSE FOR A PEASANT! YOU DISHEVELED CRETIN! YOU ABSOLUTE NOBODY! I AM THE RULER NOT YOU! I AM THE KING! THE POWERFUL! THE MIGHTY! THE ONLY ONE WHO MATTERS!"
+
+const TheKing = new Room("The King");
+TheKing.description = "(The King walk's closer) <strong>YOU ABSOLUTE WASTE OF MY TIME! I NEED YOU TO GET OUT OF MY SEAT! LEAVE! YOU DON'T BELONG! GO, AWAY!</strong> pssst adventurer, we might want to do as he says and leave you know. come on we can find another way."
+const king = new Item("King");
+king.description = "well this is definiteley the king, I will tell you that, you enjoy meeting him?";
+TheKing.addItem(king);
 
 // death route's
 
@@ -363,6 +372,8 @@ troll.description = "(you go to walk back to the forest) alright maybe we missed
 //not a loss just a room
 const view = new Room("The Other View");
 view.description = "(You walk over to a bench on the bridge overlooking the beautiful view of the outer village and all the incredible surrounding nature) This is nice, take a moment as long as you need.";
+
+
 //Start room linking here
 middleForest.linkRoom("north", northForest);
 middleForest.linkRoom("south", southForest);
@@ -414,11 +425,7 @@ kingdom.linkRoom("north", mainHall);
 wKingdom.linkRoom("north", alley);
 mainHall.linkRoom("north", throneRoom);
 throneRoom.linkRoom("north", throne);
-alley.linkRoom("north", middleForest);
-throne.linkRoom("north", middleForest);
-
-ko1.linkRoom("north", middleForest);
-hunger.linkRoom("north", middleForest);
+throne.linkRoom("north", TheKing);
 
 const originalRoomItems = new Map();
 originalRoomItems.set(middleForest, [grimoire]);
@@ -428,6 +435,7 @@ originalRoomItems.set(giftBearer, [apple]);
 originalRoomItems.set(theVoid, [portal]);
 originalRoomItems.set(kingdomGate, [ogre]);
 originalRoomItems.set(throne, [crown]);
+originalRoomItems.set(TheKing, [king]);
 
 //Main game function's here
 let currentRoom = middleForest;
@@ -465,7 +473,7 @@ function displayRoomInfo(room) {
 
 
 function collectItem(itemName) {
-  const item = currentRoom.items.find(i => i.name.toLowerCase() === itemName);
+  const item = currentRoom.items.find(i => i.name.toLowerCase() === itemName.toLowerCase());
   if (item) {
     currentRoom.removeItem(itemName);
     playerInventory.push(item);
@@ -474,6 +482,7 @@ function collectItem(itemName) {
   return false;
 }
 
+
 function checkWinCondition() {
   const requiredItems = ["portal"];
   return requiredItems.every(item => playerInventory.some(i => i.name === item));
@@ -481,6 +490,11 @@ function checkWinCondition() {
 
 function checkSecondWinCondition() {
   const requiredItems = ["crown"];
+  return requiredItems.every(item => playerInventory.some(i => i.name === item));
+}
+
+function checkThirdWinCondition() {
+  const requiredItems = ["King"]
   return requiredItems.every(item => playerInventory.some(i => i.name === item));
 }
 
@@ -511,10 +525,13 @@ function startGame() {
         if (collectItem(itemName)) {
           output.innerHTML += `<p>You collected the ${itemName}!</p>`;
           if (checkWinCondition()) {
-            output.innerHTML += `<p><strong>Congratulations! You've collected all the items. You win!</strong></p>`;
+            output.innerHTML += `<p> We... where are we? this isn't our realm...what is this?.....<br><strong>You win!</strong></p>`;
             inputBox.disabled = true;
           } else if (checkSecondWinCondition()) {
-            output.innerHTML += `<p><strong>Congratulations! You've collected the crown. You win!</strong></p>`;
+            output.innerHTML += `<p>HAHA! SCREW YOU F@#%WIT WE WIN YOU ARE NO LONGER KING WE GOT THE CROWN YOU DON'T HAHAAAAA!<br><br><strong>You win!</strong></p>`;
+            inputBox.disabled = true;
+          } else if (checkThirdWinCondition()) {
+            output.innerHTML += `<p>Uuuuuuuuh how in the f@£$..... you know what nevermind. <br><br><strong>You win!</strong></p>`;
             inputBox.disabled = true;
           }
         } else {
