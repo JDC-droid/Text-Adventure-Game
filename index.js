@@ -339,35 +339,35 @@ const wKingdom = new Room("Explore");
 wKingdom.description = "(Walking West of the castle you enter a gloomy, dark, dissorienting maze of alley ways) Oh look! (As you hear the voice in your head depict you look....you are stabbed in the back by a dagger and then you're robbed, left to bleed out in the alley, they don't call you misfortunate for nothing) damn.";
 
 const alley = new Room("The Depth's Alley");
-alley.description = "(You enter a dark mist) Dead?! DEAD?! We were THIIIS close come oooon!"
+alley.description = "(You enter a dark mist) Dead?! DEAD?! We were THIIIS close come oooon! <br><br><strong>YOU LOSE!</strong>";
 
 const ko1 = new Room("K.O!!!");
-ko1.description = "(You lay there fading) YOU GOT KNOCKED THE F OUT MAN...sorry just watched that movie called friday....I'll...I'll be here all week...you wont, but I will.";
+ko1.description = "(You lay there fading) YOU GOT KNOCKED THE F OUT MAN...sorry just watched that movie called friday....I'll...I'll be here all week...you wont, but I will.<br><br><strong>YOU LOSE!</strong>";
 
 const hunger = new Room("The Hunger");
-hunger.description = "(You succumb to your hunger and begin to fall) Hey...Hey...Heeeeeeey...okay (your eyes close)";
+hunger.description = "(You succumb to your hunger and begin to fall) Hey...Hey...Heeeeeeey...okay (your eyes close) <br><br><strong>YOU LOSE!</strong>";
 
 const rock = new Room("Dwayne the Rock Golem");
-rock.description = "So, here we are pancake, we ran into Dwayne, how we feeling, I'll tell you, I feel pretty crushed right now.";
+rock.description = "So, here we are pancake, we ran into Dwayne, how we feeling, I'll tell you, I feel pretty crushed right now. <br><br><strong>YOU LOSE!</strong>";
 
 const water = new Room("Glorious Water");
-water.description = "you know human's are like 60% to 70% water so we should be right at home.....IF YOU COULD SWIM!!";
+water.description = "you know human's are like 60% to 70% water so we should be right at home.....IF YOU COULD SWIM!! <br><br><strong>YOU LOSE!</strong>";
 
 const banana = new Room("a damn BANANA!!!")
-banana.description = "Well done, you were killed by a food item, a food...item, this isn't that movie sausage party, this one didn't even fight back.";
+banana.description = "Well done, you were killed by a food item, a food...item, this isn't that movie sausage party, this one didn't even fight back. <br><br><strong>YOU LOSE!</strong>";
 
 //This is encrypted to a Ceaser Cipher of 12
 const rearranged = new Room("Mfay Dq-mddmzsqyqzf");
-rearranged.description = "Nqmgfurgx, Kag saf agd itaxq nquzs dq-mddmzsqp....U tmfq, kag, U xuqp...za U pupz'f.....U'p eiqmd ngf qhqz qzodkbfqp uy zaf mxxaiqp £@*% KAG.....eqq.";
+rearranged.description = "Nqmgfurgx, Kag saf agd itaxq nquzs dq-mddmzsqp....U tmfq, kag, U xuqp...za U pupz'f.....U'p eiqmd ngf qhqz qzodkbfqp uy zaf mxxaiqp £@*% KAG.....eqq. <br><br><strong>YOU LOSE!</strong>";
 
 const quiet = new Room("The Quiet");
-quiet.description = "This, well at least its peaceful (1 hour of silence passes) huh, tick tock tick tock. (2 hours) It's too quiet (75 hours pass) AAAHHHHHHH......this sucks (cuts to you as a skeleton)";
+quiet.description = "This, well at least its peaceful (1 hour of silence passes) huh, tick tock tick tock. (2 hours) It's too quiet (75 hours pass) AAAHHHHHHH......this sucks (cuts to you as a skeleton) <br><br><strong>YOU LOSE!</strong>";
 
 const necromancers = new Room("The Necromancers of the Nihilistic Regime");
-necromancers.description = "(someone or something starts taking your limbs away) huh? uuuuhhhh we are getting harvested for right now? WAKE UP! WEEWOOWEEWOOWEEWOO!!! HEY! (You fail to wake and you are used to make potions of mana for the NecromancerS)";
+necromancers.description = "(someone or something starts taking your limbs away) huh? uuuuhhhh we are getting harvested for right now? WAKE UP! WEEWOOWEEWOOWEEWOO!!! HEY! (You fail to wake and you are used to make potions of mana for the NecromancerS) <br><br><strong>YOU LOSE!</strong>";
 
 const troll = new Room("Back to the Forest");
-troll.description = "(you go to walk back to the forest) alright maybe we missed some loot. (You trip and fall knocking yourself out on the bridge) really? really?";
+troll.description = "(you go to walk back to the forest) alright maybe we missed some loot. (You trip and fall knocking yourself out on the bridge) really? really? <br><br><strong>YOU LOSE!</strong>";
 
 //not a loss just a room
 const view = new Room("The Other View");
@@ -422,6 +422,7 @@ bridge.linkRoom("back", troll);
 
 kingdomGate.linkRoom("north", kingdom);
 kingdom.linkRoom("north", mainHall);
+kingdom.linkRoom("west", wKingdom);
 wKingdom.linkRoom("north", alley);
 mainHall.linkRoom("north", throneRoom);
 throneRoom.linkRoom("north", throne);
