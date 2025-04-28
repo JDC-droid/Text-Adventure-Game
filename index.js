@@ -218,25 +218,25 @@ middleForest.addItem(grimoire);
 const northForest = new Room("The North Forest", "./images/northForest.jpeg");
 northForest.description = "Ah the woods are clearing my little adventurer, you and me, how, cheery? I dont know yet.";
 
-const westForest = new Room("Thick Woodlands");
+const westForest = new Room("Thick Woodlands", "./images/Thick-Woodlands.jpeg");
 westForest.description = "I dont know why you chose this way for just look at this place we can barely see here!";
 const stick = new Item("The sword of hope");
 stick.description = "is this a sword? maybe our lucks turning arou...it's a twig, this is not a good sign.";
 westForest.addItem(stick);
 
-const eastForest = new Room("Moor Trees");
+const eastForest = new Room("Moor Trees", "./images/Moor-Trees.jpeg");
 eastForest.description = "I dont know about you but the trees are losing their wonder now, where's home? why am I in your head?";
 
-const southForest = new Room("Start of the Fissure");
+const southForest = new Room("Start of the Fissure", "./images/Start-Fissure.jpeg");
 southForest.description = "This doesn't look safe Adventurer...there's a weird distortion here.";
 
-const tavern = new Room("Tavern");
+const tavern = new Room("Tavern", "./images/Tavern.jpeg");
 tavern.description = "(You enter a tavern) Decent place, nice way to socialise.....too bad you're the anti-social type huh silent one.";
 const beer = new Item("A lovely beverage (beer)");
 beer.description = "OHO HO HOOO, now this I can get behind but uh lets save it for after the adventure yeah?";
 tavern.addItem(beer);
 
-const giftBearer = new Room("Gift Merchant");
+const giftBearer = new Room("Gift Merchant", "./images/Lyssandra.jpg");
 giftBearer.description = "Oh lets listen to them (The gift Merchant speaks)";
 const apple = new Item("apple");
 apple._itemWeight = 25;
@@ -246,19 +246,19 @@ giftBearer.character = new Character("Gift Merchant Lyssandra");
 giftBearer.character.description = "Aaagh, Lyssandra, the gift mercant, Legendary, truly a marvelous encounter, could this be our luck showing...your pants are falling...so, uh, maybe not?<br>";
 giftBearer.character.conversation = "Oh, Oh my, anyway, hello there, I am the gift merchant of Legend Lyssandra, please take this and be on your way, with your, plummeting pants, I mean, I dont think that's how you make a first impression. Please be careful, it is a heavy apple for certain.";
 
-const distortedForest = new Room("Distorted Forest");
+const distortedForest = new Room("Distorted Forest", "./images/Distorted-Forest.jpg");
 distortedForest.description = "Okay, this place is not right, please tell me you have a plan for this.";
 
-const theVoid = new Room("The Void");
+const theVoid = new Room("The Void", "./images/The-Void-Portal.jpg");
 theVoid.description = "nevermind this got worse I thought you had a plan not just KEEP HEADING INTO THE CREEPY AREA! sorry sorry but WHY?!";
 const portal = new Item("portal");
 portal.description = "It's...a...a..portal?...wait...how did I know that?";
 theVoid.addItem(portal);
 
-const bridge = new Room("Bridge of, well a bridge");
+const bridge = new Room("Bridge of, well a bridge", "./images/bridge.jpg");
 bridge.description = "well at least we got to the bridge, next step the kingdom am i right? Why am I asking you, you're not gonna answer me.";
 
-const kingdomGate = new Room("The Gate", "./Kingdom.Gate.jpeg");
+const kingdomGate = new Room("The Gate", "./images/Kingdom-Gate.jpeg");
 kingdomGate.description = "Why is there an ogre infront of the Gate? asleep?... We dont have gear to fight this thing or do anything really. what do we do?";
 const ogre = new Item("Shargoth the Destroyer");
 kingdomGate.character = new Character("Shargoth the Destroyer");
@@ -267,16 +267,16 @@ ogre.description = "DID YOU JUST PICK UP AND STORE AN OGRE? WHO ARE YOU? WHAT AR
 kingdomGate.addItem(ogre);
 
 
-const kingdom = new Room("Kingdom of Aurum Plateis");
-kingdom.description = "You know for the place called kingdom of gold streets it sure looks rough here.";
+const kingdom = new Room("Kingdom of Aurum Plateis", "./images/Aurum-Plateis.jpg");
+kingdom.description = "I guess we are just going around that ogre. Anyway you know for the place called kingdom of gold streets they weren't kidding.";
 
-const mainHall = new Room("The Great Hall");
+const mainHall = new Room("The Great Hall", "./images/Main-Hall.jpg");
 mainHall.description = "This is it kid, the last walk of triumph only ones here are the knights, waiting for a new ruler, let's go get that throne.";
 
-const throneRoom = new Room("The Golden Throne");
+const throneRoom = new Room("The Golden Throne", "./images/Throne-Room.jpg");
 throneRoom.description = "There it is the Golden Throne...not to be mistaken with the porcelain one ha ha aaaahhh.. ahem....anyway...doesn't look comfy but hey that's why they have cushions right?";
 
-const throne = new Room("Glad to of made it");
+const throne = new Room("Glad to of made it", "./images/Throne.jpg");
 throne.description = "well thats it my friend, me and you all the way to the end, been good hasn't it? well, guess I will leave you with your achievemnt's, put that crown on, rule this place, you dont need me anymore. so long pal.";
 const crown = new Item("crown");
 crown.description ="Well, Good Job friend, well done.";
@@ -285,7 +285,7 @@ throne.character = new Character("King of Aurum Plateis");
 throne.character.description = "King of Aurum Plateis, the one and only, d@*&head, whoops sorry forgot this was PG rated. but no he Is a d#!£.";
 throne.character.conversation = "YOOOOOOOOOUUUUU! GET OFF MY THRONE! WHO EVEN ARE YOU?! YOU SAD EXCUSE FOR A PEASANT! YOU DISHEVELED CRETIN! YOU ABSOLUTE NOBODY! I AM THE RULER NOT YOU! I AM THE KING! THE POWERFUL! THE MIGHTY! THE ONLY ONE WHO MATTERS!"
 
-const TheKing = new Room("The King");
+const TheKing = new Room("The King", "./images/The King.jpg");
 TheKing.description = "(The King walk's closer) <strong>YOU ABSOLUTE WASTE OF MY TIME! I NEED YOU TO GET OUT OF MY SEAT! LEAVE! YOU DON'T BELONG! GO, AWAY!</strong> pssst adventurer, we might want to do as he says and leave you know. come on we can find another way."
 const king = new Item("King");
 king.description = "well this is definiteley the king, I will tell you that, you enjoy meeting him?";
@@ -293,84 +293,84 @@ TheKing.addItem(king);
 
 // death route's
 
-const ewForest = new Room ("The wildlife of the forest");
+const ewForest = new Room ("The wildlife of the forest", "./images/Viscous-Wolves.jpg");
 ewForest.description = "Wolves, why is it always wolves?...this is a goodbye, we barely even got anywhere.";
 
-const esForest = new Room("KNOCKOUT 1!");
+const esForest = new Room("KNOCKOUT!", "./images/Knockout.jpg");
 esForest.description = "you RAN INTO A TREE, and you're out cold... for f..(you fade out of consciousness)";
 
-const eeForest = new Room("ADVENTURE!");
+const eeForest = new Room("ADVENTURE!", "./images/ADVENTURE.jpg");
 eeForest.description = "I swear we passed that tree like five minutes ago...where are we....(50 days pass, you fall over from hunger)... we are done for kid, you just could'nt find civilisation we were this clo..hey HEY DO (you fall asleep for the final time)";
 
-const wsForest = new Room("Sweet View!");
+const wsForest = new Room("Sweet View!", "./images/Water-Rapids.jpg");
 wsForest.description = "(You stumble and fall into a lake) of all the lakes you picked the one with rapids, RAPIDS! (you feel the air leaving your body as you submerge) This is a horrible way for this to end.";
 
-const wwForest = new Room("Time for a rest");
+const wwForest = new Room("Time for a rest", "./images/Rest-But-Rock.jpg");
 wwForest.description = "(You take a rest on a very comfy, warm rock) This is nice we have sun, we have comfort, we have earthquakes. Wait...Earthquakes?! (You feel the giant boulder move from under you) This Isn't good kid. (The golem lifts its arm) Mommy? (The Golem flattens you with one tremendous slam)";
 
-const weForest = new Room("Out of all the spots Amazing.");
+const weForest = new Room("Out of all the spots Amazing.", "./images/Slipping-Peal.jpg");
 weForest.description = "(You trip on a banana peal) Seriously...of all things...god I hate the wildlife in this area (You feel nauseous) oooo you got blood from your head you oka...(You fade out of consciousness)";
 
-const seForest = new Room("The Warm Forest");
+const seForest = new Room("The Warm Forest", "./images/Rest.jpg");
 seForest.description = "(You feel a cuddly, embracing warmth of the heat around you comfort your soul) The weathers so nice here. (You lay back on the long grass) I think we could get used to this dont you? (Hours pass, you feel a presence)"
 
 //sn returns to start
 
 //Bridge South back to start
 
-const bridgeW = new Room("Oh look!");
+const bridgeW = new Room("Oh look!", "./images/Fell-Off-Bridge.jpg");
 bridgeW.description = "(You lean over the edge of the bridge too far and fall) NO, NO ,NO.....aaahhhh why'd you have to go and do that? (You get taken down stream and become lost)";
 
 //not a death but a return to bridge condition
-const bridgeE = new Room("Ah the east");
+const bridgeE = new Room("Ah the east", "./images/Walk-To-View.jpg");
 bridgeE.description = "Alright, look at that view very peaceful, yeah, could take this in all day.....Too bad we are busy, let's get a move on come on.";
 
-const seVoid = new Room("The Open Vault");
+const seVoid = new Room("The Open Vault", "./images/The-Vault.jpg");
 seVoid.description = "(A cascading vault tower's above you, the door already cracked open) This is weird (You approach closer to the vault) Hey...listen here, there's two of us, come on now (You enter the vault and get dragged, distorted, stretched, manipulated to the atom) WhHHaEAttaeeAAIITTT WHhhhYYyy DiiiddDDidId YooUUUuIOuyerftsy dODODooeerRR Thatwtahstdefatth.";
 
-const swVoid = new Room("The Nothing");
+const swVoid = new Room("The Nothing", "./images/The-Nothing.jpg");
 swVoid.description = "(You enter a fragmented realm that suddenly settles, white, nothing, just like the start of the universe) Where...where are we? what is this? (2 decades pass in a mere 24 hours) Traveler...why are we alive here? what is this? why are we here? there's no way out? (The voice in your head has lost it all their reason, their will, you evently fall into the same pit insane, you are existing but lost and found, nothing.";
 
 //swNorth return to start condition also
-const swNorth = new Room("The Crystal");
+const swNorth = new Room("The Crystal", "./images/The-Crystal.jpg");
 swNorth.description = "(Walking forward a desirable looking crystal is in your path, purple, shiny, valuable?) I wonder what this is (You touch the Crystal, it's power forces you back to the forest forest propelling you backwards, you land winded back to your start destination)";
 
-const wKingdom = new Room("Explore");
+const wKingdom = new Room("Explore", "./images/Explore.jpg");
 wKingdom.description = "(Walking West of the castle you enter a gloomy, dark, dissorienting maze of alley ways) Oh look! (As you hear the voice in your head depict you look....you are stabbed in the back by a dagger and then you're robbed, left to bleed out in the alley, they don't call you misfortunate for nothing) damn.";
 
-const alley = new Room("The Depth's Alley");
+const alley = new Room("The Depth's Alley", "./images/Alley.jpg");
 alley.description = "(You enter a dark mist) Dead?! DEAD?! We were THIIIS close come oooon! <br><br><strong>YOU LOSE!</strong>";
 
-const ko1 = new Room("K.O!!!");
+const ko1 = new Room("K.O!!!", "./images/KO1.jpg");
 ko1.description = "(You lay there fading) YOU GOT KNOCKED THE F OUT MAN...sorry just watched that movie called friday....I'll...I'll be here all week...you wont, but I will.<br><br><strong>YOU LOSE!</strong>";
 
-const hunger = new Room("The Hunger");
+const hunger = new Room("The Hunger", "./images/Hunger.jpg");
 hunger.description = "(You succumb to your hunger and begin to fall) Hey...Hey...Heeeeeeey...okay (your eyes close) <br><br><strong>YOU LOSE!</strong>";
 
-const rock = new Room("Dwayne the Rock Golem");
+const rock = new Room("Dwayne the Rock Golem", "./images/Dwayne.jpg");
 rock.description = "So, here we are pancake, we ran into Dwayne, how we feeling, I'll tell you, I feel pretty crushed right now. <br><br><strong>YOU LOSE!</strong>";
 
-const water = new Room("Glorious Water");
+const water = new Room("Glorious Water", "./images/Water.jpg");
 water.description = "you know human's are like 60% to 70% water so we should be right at home.....IF YOU COULD SWIM!! <br><br><strong>YOU LOSE!</strong>";
 
-const banana = new Room("a damn BANANA!!!")
+const banana = new Room("a damn BANANA!!!", "./images/Banana.jpg");
 banana.description = "Well done, you were killed by a food item, a food...item, this isn't that movie sausage party, this one didn't even fight back. <br><br><strong>YOU LOSE!</strong>";
 
 //This is encrypted to a Ceaser Cipher of 12
-const rearranged = new Room("Mfay Dq-mddmzsqyqzf");
+const rearranged = new Room("Mfay Dq-mddmzsqyqzf", "./images/Rearranged.jpg");
 rearranged.description = "Nqmgfurgx, Kag saf agd itaxq nquzs dq-mddmzsqp....U tmfq, kag, U xuqp...za U pupz'f.....U'p eiqmd ngf qhqz qzodkbfqp uy zaf mxxaiqp £@*% KAG.....eqq. <br><br><strong>YOU LOSE!</strong>";
 
-const quiet = new Room("The Quiet");
+const quiet = new Room("The Quiet", "./images/Skeleton.jpg");
 quiet.description = "This, well at least its peaceful (1 hour of silence passes) huh, tick tock tick tock. (2 hours) It's too quiet (75 hours pass) AAAHHHHHHH......this sucks (cuts to you as a skeleton) <br><br><strong>YOU LOSE!</strong>";
 
-const necromancers = new Room("The Necromancers of the Nihilistic Regime");
+const necromancers = new Room("The Necromancers of the Nihilistic Regime", "./images/Necromancers.jpg");
 necromancers.description = "(someone or something starts taking your limbs away) huh? uuuuhhhh we are getting harvested for right now? WAKE UP! WEEWOOWEEWOOWEEWOO!!! HEY! (You fail to wake and you are used to make potions of mana for the NecromancerS) <br><br><strong>YOU LOSE!</strong>";
 
-const troll = new Room("Back to the Forest");
+const troll = new Room("Back to the Forest", "./images/Troll.jpg");
 troll.description = "(you go to walk back to the forest) alright maybe we missed some loot. (You trip and fall knocking yourself out on the bridge) really? really? <br><br><strong>YOU LOSE!</strong>";
 
 //not a loss just a room
-const view = new Room("The Other View");
+const view = new Room("The Other View", "./images/View.jpg");
 view.description = "(You walk over to a bench on the bridge overlooking the beautiful view of the outer village and all the incredible surrounding nature) This is nice, take a moment as long as you need.";
 
 
@@ -410,6 +410,8 @@ seForest.linkRoom("north", necromancers);
 swNorth.linkRoom("back", middleForest);
 
 bridgeE.linkRoom("next",view );
+view.linkRoom("back", bridgeE);
+bridgeE.linkRoom("back", bridge);
 
 northForest.linkRoom("south", middleForest);
 northForest.linkRoom("north", bridge);
@@ -514,7 +516,7 @@ function startGame() {
   document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       const command = inputBox.value.trim().toLowerCase();
-      const directions = ["north", "south", "east", "west"];
+      const directions = ["north", "south", "east", "west", "back"];
 
       const output = document.getElementById("text");
 
